@@ -1,0 +1,38 @@
+header {
+    background-color: burlywood;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+}
+
+#citySideBar {
+    display:flex;
+    flex-direction: column;
+    background-color: tan;
+    padding-top: 20px;
+    padding-right: 20px;
+}
+
+button {
+    border-radius: 8px;
+    background-color: burlywood;
+    margin: 5px;
+}
+
+#cityWeather {
+    display:flex;
+    flex-direction: row;
+    flex: 1;
+    background-color: lightyellow;
+    justify-content: space-evenly;
+}
+
+.dayWeather {
+    margin: 10px;
+}
+
+ul {
+    list-style: none;
+}
