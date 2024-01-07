@@ -1,3 +1,21 @@
+
+h2 {
+    font-size: 28px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+ul {
+    margin-left: 20px;
+    border: #0885d9;
+    border-style: solid;
+    list-style: none;
+    padding: 0;
+}
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -5,11 +23,13 @@ body {
 }
 
 header {
-    background-color: #3498db;
-    color: #fff;
+    /* background-color: blue; */
+    /* color: gold; */
     padding: 1rem;
     text-align: center;
+    
 }
+
 
 .container {
     display: flex;
@@ -30,17 +50,19 @@ form {
     padding-top: 1rem;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
-}
-
 main {
     flex-grow: 1;
     padding: 1rem;
 }
 
+#currentWeather {
+    margin-bottom: 30px;
+    margin-left: 20px;
+}
+
+
 #fiveDayForecast {
     display: flex;
     flex-direction: row;
+   
 }

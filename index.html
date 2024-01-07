@@ -23,10 +23,10 @@
     <title>Weather Forecast Dashboard</title>
 </head>
 <body>
-    <header class="d-flex flex-column align-items-center" class="p-5 mb-4">
-        <h1 class="display-6">Weather Forecast Dashboard</h1>
-        <h2 class="lead">Today is <span id="dateTime"></span></h2>
-      </header>
+    <header class="d-flex flex-column align-items-center bg-primary" class="p-5 mb-4">
+        <h1 class="display-6 text-warning">Weather Forecast Dashboard</h1>
+        <h2 class="text-warning">Today is <span id="dateTime"></span></h2>
+    </header>
 
     <main>
       <div class="container">
@@ -37,20 +37,23 @@
                 <button type="submit">Search</button>
             </form>
             <div id="searchHistory">
-                <h2>Search History</h2>
+                <h2>My Cities</h2>
                 <ul id="cityList"></ul>
             </div>
         </aside>
-        <main>
+        <main><!-- Display current weather information here -->
+
             <section id="currentWeather">
-              <h2 id="currentCity"></h2>
-              <p id="currentTemperature"></p>
-              <p id="currentHumidity"></p><!-- Display current weather information here -->
-              <p id="currentCloud"></p>
+              <h1 id="currentCity"></h1>
+              <h2><span id="skyView"></span> <span id="currentTemperature"></span>  
+              <span id="currentHumidity"></span><span id="feelsLike"></span></h2>
+              <p id ="skyIcon"></p>
             </section>
+
             <section id="fiveDayForecast">
-              <div id="fiveDayForecast"></div>
+              <!-- <div id="fiveDayForecast"></div> -->
             </section>
+
         </main>
     </div>
     </main>
