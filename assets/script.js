@@ -38,6 +38,54 @@ $(document).ready(function() {
       }
   });
 
+  function getWeatherData(cityName) {
+    let geocodingUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${apiKey}`;
+
+    $.getJSON(geocodingUrl)
+        .done(geocodingData => {
+            if (geocodingData.length === 0) {
+                // Handle case where geocoding data is not found
+                console.error('Geocoding data not found');
+                return;
+            }
+
+            const { lat, lon } = geocodingData[0];
+            const weatherApiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+
+            console.log('Weather API URL:', weatherApiUrl);
+
+            $.getJSON(weatherApiUrl)
+                .done(data => {
+                    console.log('Received Weather Data:', data);
+                    updateCurrentWeatherUI(data);
+                })
+                .fail(() => {
+                    // Handle case where there is an error fetching weather data
+                    console.error('Error fetching weather data');
+                });
+        })
+        .fail(() => {
+            // Handle case where there is an error fetching geocoding data
+            console.error('Error fetching geocoding data');
+        });
+}
+
+function updateCurrentWeatherUI(data) {
+  let city = data.city.name;
+  let temperatureKelvin = data.list[0].main.temp;
+  let temperatureCelsius = temperatureKelvin - 273.15;
+  let humidity = data.list[0].main.humidity;
+
+  let cityElement = $('#currentCity');
+  let temperatureElement = $('#currentTemperature');
+  let humidityElement = $('#currentHumidity');
+
+  cityElement.text(`City: ${city}`);
+  temperatureElement.text(`Temperature: ${temperatureCelsius.toFixed(2)}°C`);
+   humidityElement.text(`Humidity: ${humidity}%`);
+ }
+
+
 
 
 
