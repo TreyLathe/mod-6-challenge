@@ -1,6 +1,10 @@
+h1 {
+    margin-left: 20px;
+}
 
 h2 {
     font-size: 28px;
+    margin-left: 20px;
 }
 
 h3 {
@@ -18,16 +22,13 @@ ul {
 
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
+    margin: 20px;
     padding: 0;
 }
 
 header {
-    /* background-color: blue; */
-    /* color: gold; */
     padding: 1rem;
     text-align: center;
-    
 }
 
 
@@ -56,8 +57,10 @@ main {
 }
 
 #currentWeather {
+    display:flex;
     margin-bottom: 30px;
     margin-left: 20px;
+
 }
 
 
