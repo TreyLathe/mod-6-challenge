@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link
@@ -21,15 +23,16 @@
     />
     <link rel="stylesheet" href="./assets/style.css" />
     <title>Weather Forecast Dashboard</title>
-</head>
-<body>
+  </head>
+  <body>
+    <!-- header with title of page and today's day -->
     <header class="d-flex flex-column align-items-center bg-primary" class="p-5 mb-4">
         <h1 class="display-6 text-warning">Weather Forecast Dashboard</h1>
         <h2 class="text-warning">Today is <span id="dateTime"></span></h2>
     </header>
-
-    <main>
-      <div class="container">
+    <!-- container div for all other information -->
+    <div class="container">
+        <!-- contains search bar and searched cities -->
         <aside>
             <form id="searchForm">
                 <label for="cityInput">Search for a city:</label>
@@ -41,22 +44,20 @@
                 <ul id="cityList"></ul>
             </div>
         </aside>
-        <main><!-- Display current weather information here -->
-
+        <!-- main section with today's weather -->
+        <main>
+            <!-- Top section for current day's weather -->
             <section id="currentWeather">
               <span id ="skyIcon"></span><h1 id="currentCity"></h1>
               <h2><span id="skyView"></span> <span id="currentTemperature"></span>  
-              <span id="currentHumidity"></span><span id="feelsLike"></span></h2>
-              
+              <span id="currentHumidity"></span><span id="windSpeed"></span><span id="feelsLike"></span></h2>
             </section>
-
+            <!-- lower section  for 5 day forecast, created dynamically by javascript-->
             <section id="fiveDayForecast">
-              <!-- <div id="fiveDayForecast"></div> -->
             </section>
-
         </main>
     </div>
-    </main>
+    
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
