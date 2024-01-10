@@ -13,7 +13,8 @@ RESOURCES USED:
 
 RELEVANT LINKS:
 Repository: https://github.com/TreyLathe/weatherDashboardMod6
-Deployed Site: https://treylathe.github.io/mod-6-challenge/
+
+Deployed Site: https://treylathe.github.io/weatherDashboardMod6/
 
 SCREENSHOTS:
 Screen presented before search
