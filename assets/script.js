@@ -132,7 +132,7 @@ $(document).ready(function() {
       dayElement.innerHTML = `
           <ul class="list-group list-group-flush">
           <li class="list-group-item bg-primary text-warning fw-bold"><img src="https://openweathermap.org/img/wn/${cloudIcon}.png" alt="Weather Icon"></br> ${date}</li>
-          <li class="list-group-item bg-warning text-primary fw-bold">${cloudCover} <br>high ${roundedTempMax}°F<br>humidity ${humidity}%<br>wind speed ${roundHighWindSpeed}mph</li>`;
+          <li class="list-group-item bg-warning text-primary fw-bold">${cloudCover} <br>high ${roundedTempMax}°F<br>humidity ${humidity}%<br>wind ${roundHighWindSpeed}mph</li>`;
       fiveDayForecastSection.appendChild(dayElement);
     }
   }
