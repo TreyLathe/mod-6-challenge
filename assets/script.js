@@ -7,34 +7,33 @@ let currentWeatherSection = $('#currentWeather');
 let fiveDayForecastSection = $('#fiveDayForecast');
 let dateTime = $('#dateTime');
 
-
+//load document before code is executed
 $(document).ready(function() {
   //gets day from day.js and formats (from previous mod 5 challenge)
   function dateTimeUpdate() {
     let rightNow = dayjs().format("dddd, MMMM DD YYYY");
     dateTime.text(rightNow);
   }
-
   //updates timer
   setInterval(dateTimeUpdate, 1000);
 
   // Event handler for the form submission
-  $('#searchForm').submit(function(event) {
+  searchForm.submit(function(event) {
       // Prevent the default form submission behavior, which would reload the page
       event.preventDefault();
       
       // Get the trimmed value of the city input
-      let cityName = $('#cityInput').val().trim();
+      let cityName = cityInput.val().trim();
     
       // Check if a valid city name is provided
       if (cityName) {
 
-        console.log('Form submitted with city:', cityName);
+        // console.log('Form submitted with city:', cityName);
           // Call the function to fetch weather data for the specified city
           getWeatherData(cityName);
 
           // Clear the input field after submission
-          $('#cityInput').val('');
+          cityInput.val('');
       }
   });
 
@@ -133,14 +132,15 @@ $(document).ready(function() {
       dayElement.innerHTML = `
           <ul class="list-group list-group-flush">
           <li class="list-group-item bg-primary text-warning fw-bold"><img src="https://openweathermap.org/img/wn/${cloudIcon}.png" alt="Weather Icon"></br> ${date}</li>
-          <li class="list-group-item bg-warning text-primary fw-bold">${cloudCover} with a high ${roundedTempMax}°F, humidity at ${humidity}% and wind speed of ${roundHighWindSpeed}mph</li>`;
+          <li class="list-group-item bg-warning text-primary fw-bold">${cloudCover} <br>high ${roundedTempMax}°F<br>humidity ${humidity}%<br>wind speed ${roundHighWindSpeed}mph</li>`;
       fiveDayForecastSection.appendChild(dayElement);
     }
   }
+
   //function to create a list of searched cities to save search history
   function addToCityList(cityName) {
     // Check if city is already in the list to avoid duplicates
-    if ($("#cityList button").filter(function() { return $(this).text() === cityName; }).length === 0) {
+    if (cityList.find("button").filter(function() { return $(this).text() === cityName; }).length === 0) {
       //create buttons for searched cities so can revisit search easily
       let cityButton = $('<button>')
           .addClass('list-group-item list-group-item-action')
@@ -158,11 +158,11 @@ $(document).ready(function() {
       //add list item with class, append the city button and the remove button
       let listItem = $('<li>').addClass('list-group-item d-flex justify-content-between ');
       listItem.append(cityButton).append(removeButton);
-      $('#cityList').append(listItem);
+      cityList.append(listItem);
       saveCityListToLocalStorage(); //save to local storage
+    }
   }
-  
-}
+
   //function to remove city from saved list
   function removeFromCityList(cityName) {
     // Remove city from the list
