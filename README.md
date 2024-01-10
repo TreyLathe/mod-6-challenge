@@ -12,7 +12,7 @@ RESOURCES USED:
 *Xpert Learning assistant
 
 RELEVANT LINKS:
-Repository: https://github.com/TreyLathe/mod-6-challenge
+Repository: https://github.com/TreyLathe/weatherDashboardMod6
 Deployed Site: https://treylathe.github.io/mod-6-challenge/
 
 SCREENSHOTS:
